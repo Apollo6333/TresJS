@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const mensagem = document.getElementById('mensagem');
     const apagarCookiesBtn = document.getElementById('apagarCookiesBtn');
 
-    // Verificar se existe um nome salvo nos cookies
     const nomeSalvo = getCookie('nome');
 
     if (nomeSalvo) {
@@ -13,13 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         mensagem.textContent = `Seja bem-vindo XX!`;
     }
 
-    // Adicionar evento de clique ao botão "OK"
     okBtn.addEventListener('click', function() {
         const nome = nomeInput.value.trim();
 
         if (nome !== '') {
             mensagem.textContent = `Seja bem-vindo ${nome}`;
-            setCookie('nome', nome, 30); // Armazenar o nome nos cookies por 30 dias
+            setCookie('nome', nome, 30);
         } else {
             alert('Por favor, informe seu nome.');
         }
@@ -28,10 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     apagarCookiesBtn.addEventListener('click', function() {
         deleteCookie('nome');
         alert('Cookies apagados com sucesso!');
-        location.reload(); // Recarregar a página para refletir a exclusão dos cookies
+        location.reload();
     });
 
-    // Função para definir um cookie
     function setCookie(nome, valor, dias) {
         const data = new Date();
         data.setTime(data.getTime() + (dias * 24 * 60 * 60 * 1000));
@@ -39,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.cookie = nome + "=" + valor + ";" + expires + ";path=/";
     }
 
-    // Função para obter o valor de um cookie
     function getCookie(nome) {
         const name = nome + "=";
         const decodedCookie = decodeURIComponent(document.cookie);

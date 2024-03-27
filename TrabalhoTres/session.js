@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const okBtn = document.getElementById('okBtn');
     const mensagem = document.getElementById('mensagem');
 
-    // Verificar se existe um nome salvo na Session
     const nomeSalvo = sessionStorage.getItem('nome');
 
     if (nomeSalvo) {
@@ -12,13 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
         mensagem.textContent = `Seja bem-vindo XX!`;
     }
 
-    // Adicionar evento de clique ao botão "OK"
     okBtn.addEventListener('click', function() {
         const nome = nomeInput.value.trim();
 
         if (nome !== '') {
             mensagem.textContent = `Seja bem-vindo ${nome}`;
-            sessionStorage.setItem('nome', nome); // Armazenar o nome na Session
+            sessionStorage.setItem('nome', nome);
         } else {
             alert('Por favor, informe seu nome.');
         }
