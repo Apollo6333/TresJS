@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nomeSalvo = getCookie('nome');
 
     if (nomeSalvo) {
-        mensagem.textContent = `Seja bem-vindo ${nomeSalvo}`;
+        mensagem.textContent = `Seja bem-vindo ${nomeSalvo}!`;
     } else {
         mensagem.textContent = `Seja bem-vindo XX!`;
     }

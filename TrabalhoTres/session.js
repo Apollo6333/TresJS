@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (nome !== '') {
             mensagem.textContent = `Seja bem-vindo ${nome}`;
-            sessionStorage.setItem('nome', nome);
+            sessionStorage.setItem('nome', nome);  
         } else {
             alert('Por favor, informe seu nome.');
         }
